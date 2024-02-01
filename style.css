@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    background-color: hsl(240, 78%, 98%);
+    font-size: 0.9375rem;
+}
+
+h1{
+    color: hsl(232, 13%, 33%);
+    margin-bottom: 2rem;
+}
+
+.toggle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.checkbox{
+    display: none;
+}
+
+.label{
+    position: relative;
+    background: linear-gradient(120deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 5px;
+    width: 47px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.label:hover{
+    background: hsl(236, 72%, 79%);
+}
+
+.name{
+    margin: 0 .8rem;
+    font-size: .8rem;
+    color: hsl(234, 14%, 74%);
+}
+
+.ball{
+    background-color: white;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    transition: transform 0.15s linear;
+}
+
+.checkbox:checked + .label .ball{
+    transform: translateX(19px);
+}
+
+.card{
+    text-align: center;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+.price{
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.white-card{
+    color: hsl(232, 13%, 33%);
+    background-color: white;
+    box-shadow: 10px 10px 50px hsl(234, 14%, 74%);
+}
+
+.first-white{
+    box-shadow: -10px 10px 50px hsl(234, 14%, 74%);
+}
+
+.purple-card{
+    background-image: linear-gradient(to bottom right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.purple-card{
+    color: white;
+}
+
+.plan, .price{
+    margin-bottom: 1rem;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.month-span, .year-span{
+    font-size: 3rem;
+}
+
+.hide-price{
+    display: none;
+}
+
+.show-price{
+    display: flex;
+}
+
+.info{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.white-card > .info{
+    border-top: solid 1px hsl(233, 13%, 49%);
+}
+
+.white-card > .last{
+    border-bottom: solid 1px hsl(233, 13%, 49%);
+}
+
+.purple-card > .info{
+    border-top: solid 1px hsl(240, 78%, 98%);
+}
+
+.purple-card > .last{
+    border-bottom: solid 1px hsl(240, 78%, 98%);
+}
+
+.learn-more{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    height: 40px;
+    border-radius: 6px;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+.purple-btn{
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: white;
+}
+
+.purple-btn:hover{
+    background-image: none;
+    background-color: white;
+    border: solid 1px hsl(237, 63%, 64%);
+    color: hsl(237, 63%, 64%);
+}
+
+.white-btn{
+    background-color: white;
+    color: hsl(237, 63%, 64%);
+}
+
+.white-btn:hover{
+    background-color: transparent;
+    border: solid 1px white;
+    color: white;
+}
+
+@media(min-width: 700px){
+    #bg-top{
+        z-index: -1;
+        position: relative;
+        float: left;
+        background-image: url(./images/bg-top.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-attachment: fixed;
+        height: 100vh;
+        width: 100%;
+    }
+
+    #bg-bottom{
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        background-image: url(./images/bg-bottom.svg);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+    }
+
+    #content{
+        position: absolute;
+        top: 2%;
+        left: 13%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card{
+        width: 250px;
+    }
+
+    #pricing{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.5rem;
+    }
+
+    .purple-card{
+        scale: 110%;
+    }
+
+    footer{
+        position: absolute;
+        bottom: 0;
+        margin-left: 30%;
+    }
+}
+
+@media(max-width: 700px){
+    body{
+        min-width: 375px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1{
+        margin-top: 1rem;
+    }
+
+    #content{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #pricing{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.5rem;
+    }
+
+    .card{
+        width: 90vw;
+        margin-bottom: 1rem;
+    }
+}
+
+footer{
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: hsl(232, 13%, 33%);
+}
+
+footer a{
+    color: hsl(237, 63%, 64%);
+}
