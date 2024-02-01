@@ -176,37 +176,25 @@ h1{
 }
 
 @media(min-width: 700px){
-    #bg-top{
-        z-index: -1;
-        position: relative;
-        float: left;
-        background-image: url(./images/bg-top.svg);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-attachment: fixed;
-        height: 100vh;
-        width: 100%;
-    }
-
-    #bg-bottom{
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        width: 100%;
-        background-image: url(./images/bg-bottom.svg);
-        background-repeat: no-repeat;
-        background-position: bottom left;
-    }
-
-    #content{
-        position: absolute;
-        top: 2%;
-        left: 13%;
+    body{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        min-height: 100vh;
+        background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg);
+        background-repeat: no-repeat no-repeat;
+        background-size: 30%, 30%;
+        background-position: top 0 right -1rem, bottom 0 left 0;
+    }
+    
+    #content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        margin-bottom: 2rem;
     }
 
     .card{
@@ -221,12 +209,6 @@ h1{
 
     .purple-card{
         scale: 110%;
-    }
-
-    footer{
-        position: absolute;
-        bottom: 0;
-        margin-left: 30%;
     }
 }
 
@@ -263,7 +245,7 @@ h1{
 footer{
     font-size: 11px;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     color: hsl(232, 13%, 33%);
 }
 
